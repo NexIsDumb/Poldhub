@@ -3,10 +3,16 @@ package;
 #if desktop
 import sys.thread.Thread;
 #end
+
+// Librerie aggiunde da Nex
+import flixel.system.FlxAssets.FlxShader;
+import flixel.util.FlxGradient;
+
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.input.keyboard.FlxKey;
+import flixel.addons.display.FlxBackdrop;
 import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
 import flixel.addons.transition.FlxTransitionableState;
@@ -44,9 +50,10 @@ typedef TitleData =
 	titley:Float,
 	startx:Float,
 	starty:Float,
-	gfx:Float,
-	gfy:Float,
-	backgroundSprite:String,
+	/*gfx:Float,
+	gfy:Float,*/
+	scale:Float,
+	//backgroundSprite:String,
 	bpm:Int
 }
 class TitleState extends MusicBeatState
@@ -79,9 +86,7 @@ class TitleState extends MusicBeatState
 	#end
 
 	var mustUpdate:Bool = false;
-
 	var titleJSON:TitleData;
-
 	public static var updateVersion:String = '';
 
 	override public function create():Void
@@ -150,7 +155,7 @@ class TitleState extends MusicBeatState
 
 		#if TITLE_SCREEN_EASTER_EGG
 		if (FlxG.save.data.psychDevsEasterEgg == null) FlxG.save.data.psychDevsEasterEgg = ''; //Crash prevention
-		switch(FlxG.save.data.psychDevsEasterEgg.toUpperCase())
+		/*switch(FlxG.save.data.psychDevsEasterEgg.toUpperCase())
 		{
 			case 'SHADOW':
 				titleJSON.gfx += 210;
@@ -164,7 +169,7 @@ class TitleState extends MusicBeatState
 			case 'BBPANZU':
 				titleJSON.gfx += 45;
 				titleJSON.gfy += 100;
-		}
+		}*/  // Lo so che è inutile togliere sta parte ma sti cazzi amari  - Nex
 		#end
 
 		if(!initialized)
@@ -208,8 +213,8 @@ class TitleState extends MusicBeatState
 	}
 
 	var logoBl:FlxSprite;
-	var gfDance:FlxSprite;
-	var danceLeft:Bool = false;
+	//var gfDance:FlxSprite;
+	//var danceLeft:Bool = false;
 	var titleText:FlxSprite;
 	var swagShader:ColorSwap = null;
 
@@ -245,21 +250,35 @@ class TitleState extends MusicBeatState
 
 		Conductor.changeBPM(titleJSON.bpm);
 		persistentUpdate = true;
+		//if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
+		var orangeSama:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [
+			FlxColor.fromRGB(226, 106, 36), FlxColor.fromRGB(226, 106, 36),
+			FlxColor.fromRGB(226, 138, 36),
+			FlxColor.fromRGB(226, 106, 36), FlxColor.fromRGB(226, 106, 36)
+		]);
+		var emo:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [FlxColor.BLACK, FlxColor.TRANSPARENT, FlxColor.TRANSPARENT, FlxColor.BLACK]);
+		var cumStains:FlxSprite = new FlxSprite(0, -10).loadGraphic(Paths.image('acquiloni malati'));
+		cumStains.alpha = 0.2;
 
-		var bg:FlxSprite = new FlxSprite();
+		var bg:FlxBackdrop = new FlxBackdrop(FlxGridOverlay.createGrid(62, 62, 62 * 2, 62 * 2, true, FlxColor.BLACK, FlxColor.TRANSPARENT));
+		bg.velocity.set(-70, -70);
+		bg.y -= 80;
 
-		if (titleJSON.backgroundSprite != null && titleJSON.backgroundSprite.length > 0 && titleJSON.backgroundSprite != "none"){
-			bg.loadGraphic(Paths.image(titleJSON.backgroundSprite));
-		}else{
-			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
-		}
+		add(orangeSama);
+		add(cumStains);
+		add(bg);
+		add(emo);
+
+		/*}else{
+			bg = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
+		}*/
 
 		// bg.setGraphicSize(Std.int(bg.width * 0.6));
 		// bg.updateHitbox();
-		add(bg);
 
 		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
 		logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
+		logoBl.scale.set(titleJSON.scale, titleJSON.scale);
 
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
 		logoBl.animation.play('bump');
@@ -268,12 +287,12 @@ class TitleState extends MusicBeatState
 		// logoBl.color = FlxColor.BLACK;
 
 		swagShader = new ColorSwap();
-		gfDance = new FlxSprite(titleJSON.gfx, titleJSON.gfy);
+		//gfDance = new FlxSprite(titleJSON.gfx, titleJSON.gfy);
 
 		var easterEgg:String = FlxG.save.data.psychDevsEasterEgg;
 		if(easterEgg == null) easterEgg = ''; //html5 fix
 
-		switch(easterEgg.toUpperCase())
+		/*switch(easterEgg.toUpperCase())
 		{
 			#if TITLE_SCREEN_EASTER_EGG
 			case 'SHADOW':
@@ -302,8 +321,9 @@ class TitleState extends MusicBeatState
 				gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
 				gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		}
+
 		add(gfDance);
-		gfDance.shader = swagShader.shader;
+		gfDance.shader = swagShader.shader;*/
 		add(logoBl);
 		logoBl.shader = swagShader.shader;
 
@@ -351,6 +371,10 @@ class TitleState extends MusicBeatState
 		var logo:FlxSprite = new FlxSprite().loadGraphic(Paths.image('logo'));
 		logo.screenCenter();
 		// add(logo);
+
+		var scanLine:FlxSprite = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT);
+		scanLine.shader = new Scanline();
+		add(scanLine);
 
 		// FlxTween.tween(logoBl, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG});
 		// FlxTween.tween(logo, {y: logoBl.y + 50}, 0.6, {ease: FlxEase.quadInOut, type: PINGPONG, startDelay: 0.1});
@@ -592,13 +616,13 @@ class TitleState extends MusicBeatState
 		if(logoBl != null)
 			logoBl.animation.play('bump', true);
 
-		if(gfDance != null) {
+		/*if(gfDance != null) {
 			danceLeft = !danceLeft;
 			if (danceLeft)
 				gfDance.animation.play('danceRight');
 			else
 				gfDance.animation.play('danceLeft');
-		}
+		}*/
 
 		if(!closedState) {
 			sickBeats++;
@@ -755,5 +779,27 @@ class TitleState extends MusicBeatState
 			}
 			skippedIntro = true;
 		}
+	}
+}
+
+// Shader per la scanline alla cazzo di cane lol  - Nex
+class Scanline extends FlxShader {
+	@:glFragmentSource('
+		#pragma header
+		void main()
+		{
+			vec2 uv = openfl_TextureCoordv.xy;
+			vec4 col = texture2D(bitmap, uv);
+			
+			// la cazzo di scanline
+			col = mix(col, vec4(sin(uv.y * 200.0 * 3.0)), 0.05);  // porca VACCA ladra (menomale che shadertoy esiste LOL)  - Nex
+			gl_FragColor = col;
+		
+		}
+	')
+
+	public function new()
+	{
+		super();
 	}
 }
