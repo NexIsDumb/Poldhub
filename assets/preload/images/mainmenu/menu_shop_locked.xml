@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu_shop_locked.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="shop locked0000" x="100" y="100" width="362" height="185" frameX="-5" frameY="19" frameWidth="369" frameHeight="185"/>
+</TextureAtlas>

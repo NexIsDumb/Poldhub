@@ -33,13 +33,13 @@ class MainMenuState extends MusicBeatState
 	private var camAchievement:FlxCamera;
 	
 	var optionShit:Array<String> = [
-		'story_mode',
+		//'story_mode',
 		'freeplay',
-		//#if MODS_ALLOWED 'mods', #end
+		'shop_locked',
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
-		//#if !switch 'donate', #end
-		'options'
+		'options',
+		#if !switch 'donate' #end
 	];
 
 	var magenta:FlxSprite;
@@ -100,17 +100,12 @@ class MainMenuState extends MusicBeatState
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
 
-		var scale:Float = 1;
-		/*if(optionShit.length > 6) {
-			scale = 6 / optionShit.length;
-		}*/
-
 		for (i in 0...optionShit.length)
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
 			var menuItem:FlxSprite = new FlxSprite(0, (i * 140)  + offset);
-			menuItem.scale.x = scale;
-			menuItem.scale.y = scale;
+			menuItem.scale.x = optionShit[i] == 'shop_locked' ? 0.85 : 1;
+			menuItem.scale.y = optionShit[i] == 'shop_locked' ? 0.85 : 1;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
@@ -119,7 +114,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.screenCenter(X);
 			menuItems.add(menuItem);
 			var scr:Float = (optionShit.length - 4) * 0.135;
-			if(optionShit.length < 6) scr = 0;
+			//if(optionShit.length < 6) scr = 0;
 			menuItem.scrollFactor.set(0, scr);
 			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
@@ -127,6 +122,10 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollowPos, null, 1);
 
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Poldhub DEMO", 12);
+		versionShit.scrollFactor.set();
+		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		add(versionShit);
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -175,6 +174,14 @@ class MainMenuState extends MusicBeatState
 			if(FreeplayState.vocals != null) FreeplayState.vocals.volume += 0.5 * elapsed;
 		}
 
+		if (!selectedSomethin) menuItems.forEach(function(spr:FlxSprite)
+		{
+			if(optionShit[curSelected] == 'shop_locked' && spr.ID == curSelected && spr.alpha != 0.4) {
+				spr.alpha = FlxMath.lerp(0.4, spr.alpha, CoolUtil.boundTo(1 - (elapsed * 20), 0.4, 1));
+			}
+			else if(spr.alpha != 1) spr.alpha = FlxMath.lerp(1, spr.alpha, CoolUtil.boundTo(1 - (elapsed * 20), 0.4, 1));
+		});
+
 		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
 		camFollowPos.setPosition(FlxMath.lerp(camFollowPos.x, camFollow.x, lerpVal), FlxMath.lerp(camFollowPos.y, camFollow.y, lerpVal));
 
@@ -201,12 +208,17 @@ class MainMenuState extends MusicBeatState
 
 			if (controls.ACCEPT)
 			{
-				/*if (optionShit[curSelected] == 'donate')
+				if (optionShit[curSelected] == 'donate')
 				{
-					CoolUtil.browserLoad('https://ninja-muffin24.itch.io/funkin');
+					CoolUtil.browserLoad('https://arkadiastore.com/collections/poldo');
+				}
+				else if (optionShit[curSelected] == 'shop_locked')
+				{
+					FlxG.sound.play(Paths.sound('cancelMenu'));
+					FlxFlicker.flicker(menuItems.members[curSelected], 1, 0.06, true, true);
 				}
 				else
-				{*/
+				{
 					selectedSomethin = true;
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 
@@ -232,14 +244,10 @@ class MainMenuState extends MusicBeatState
 
 								switch (daChoice)
 								{
-									case 'story_mode':
-										MusicBeatState.switchState(new StoryMenuState());
+									/*case 'story_mode':
+										MusicBeatState.switchState(new StoryMenuState());*/
 									case 'freeplay':
 										MusicBeatState.switchState(new FreeplayState());
-									/*#if MODS_ALLOWED
-									case 'mods':
-										MusicBeatState.switchState(new ModsMenuState());
-									#end*/
 									case 'awards':
 										MusicBeatState.switchState(new AchievementsMenuState());
 									case 'credits':
@@ -250,7 +258,7 @@ class MainMenuState extends MusicBeatState
 							});
 						}
 					});
-				//}
+				}
 			}
 			#if desktop
 			else if (FlxG.keys.anyJustPressed(debugKeys))
