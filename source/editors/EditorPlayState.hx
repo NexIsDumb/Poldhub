@@ -89,7 +89,6 @@ class EditorPlayState extends MusicBeatState
 		strumLineNotes = new FlxTypedGroup<StrumNote>();
 		opponentStrums = new FlxTypedGroup<StrumNote>();
 		playerStrums = new FlxTypedGroup<StrumNote>();
-		add(strumLineNotes);
 
 		generateStaticArrows(0);
 		generateStaticArrows(1);
@@ -101,6 +100,7 @@ class EditorPlayState extends MusicBeatState
 		
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
 		add(grpNoteSplashes);
+		add(strumLineNotes);
 
 		var splash:NoteSplash = new NoteSplash(100, 100, 0);
 		grpNoteSplashes.add(splash);

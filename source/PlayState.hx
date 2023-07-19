@@ -1053,8 +1053,8 @@ class PlayState extends MusicBeatState
 		timeBarBG.sprTracker = timeBar;
 
 		strumLineNotes = new FlxTypedGroup<StrumNote>();
-		add(strumLineNotes);
 		add(grpNoteSplashes);
+		add(strumLineNotes);
 
 		if(ClientPrefs.timeBarType == 'Song Name')
 		{
@@ -1102,17 +1102,17 @@ class PlayState extends MusicBeatState
 		FlxG.fixedTimestep = false;
 		moveCameraSection();
 
-		healthBarBG = new AttachedSprite('healthBar');
+		healthBarBG = new AttachedSprite('metalHealthBar');
 		healthBarBG.y = FlxG.height * 0.89;
 		healthBarBG.screenCenter(X);
 		healthBarBG.scrollFactor.set();
 		healthBarBG.visible = !ClientPrefs.hideHud;
-		healthBarBG.xAdd = -4;
-		healthBarBG.yAdd = -4;
+		healthBarBG.xAdd = -42.3;
+		healthBarBG.yAdd = -52.3;
 		add(healthBarBG);
 		if(ClientPrefs.downScroll) healthBarBG.y = 0.11 * FlxG.height;
 
-		healthBar = new FlxBar(healthBarBG.x + 4, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 8), Std.int(healthBarBG.height - 8), this,
+		healthBar = new FlxBar(healthBarBG.x + 40, healthBarBG.y + 4, RIGHT_TO_LEFT, Std.int(healthBarBG.width - 84), Std.int(healthBarBG.height - 90), this,
 			'health', 0, 2);
 		healthBar.scrollFactor.set();
 		// healthBar
