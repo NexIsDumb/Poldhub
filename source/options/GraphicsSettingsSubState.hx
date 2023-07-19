@@ -81,8 +81,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 	{
 		for (sprite in members)
 		{
-			var sprite:Dynamic = sprite; //Make it check for FlxSprite instead of FlxBasic
-			var sprite:FlxSprite = sprite; //Don't judge me ok
+			var sprite:FlxSprite = cast sprite;  // I think shadow was on drugs: I edited this cause it was awful LOL  - Nex
 			if(sprite != null && (sprite is FlxSprite) && !(sprite is FlxText)) {
 				sprite.antialiasing = ClientPrefs.globalAntialiasing;
 			}

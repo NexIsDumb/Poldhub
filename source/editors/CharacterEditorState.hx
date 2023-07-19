@@ -103,6 +103,7 @@ class CharacterEditorState extends MusicBeatState
 		cameraFollowPointer.setGraphicSize(40, 40);
 		cameraFollowPointer.updateHitbox();
 		cameraFollowPointer.color = FlxColor.WHITE;
+		cameraFollowPointer.antialiasing = false;
 		add(cameraFollowPointer);
 
 		changeBGbutton = new FlxButton(FlxG.width - 360, 25, "", function()

@@ -107,7 +107,6 @@ class NoteOffsetState extends MusicBeatState
 		rating.cameras = [camHUD];
 		rating.setGraphicSize(Std.int(rating.width * 0.7));
 		rating.updateHitbox();
-		rating.antialiasing = ClientPrefs.globalAntialiasing;
 		
 		add(rating);
 
@@ -128,7 +127,6 @@ class NoteOffsetState extends MusicBeatState
 			numScore.cameras = [camHUD];
 			numScore.setGraphicSize(Std.int(numScore.width * 0.5));
 			numScore.updateHitbox();
-			numScore.antialiasing = ClientPrefs.globalAntialiasing;
 			comboNums.add(numScore);
 			daLoop++;
 		}
@@ -356,7 +354,11 @@ class NoteOffsetState extends MusicBeatState
 			persistentUpdate = false;
 			CustomFadeTransition.nextCamera = camOther;
 			MusicBeatState.switchState(new options.OptionsState());
-			FlxG.sound.playMusic(Paths.music('freakyMenu'), 1, true);
+			if(!options.OptionsState.fromPause) FlxG.sound.playMusic(Paths.music('freakyMenu'), 1, true);
+			else {
+				FlxG.sound.music.pause();
+				PauseSubState.pauseMusic.resume();
+			}
 			FlxG.mouse.visible = false;
 		}
 

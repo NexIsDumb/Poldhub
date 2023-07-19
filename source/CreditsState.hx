@@ -313,12 +313,12 @@ class CreditsState extends MusicBeatState
 	}
 	#end
 
-	function getCurrentBGColor() {
+	function getCurrentBGColor():FlxColor {
 		var bgColor:String = creditsStuff[curSelected][4];
-		if(!bgColor.startsWith('0x')) {
-			bgColor = '0xFF' + bgColor;
+		if(!bgColor.startsWith('#')) {
+			bgColor = '#' + bgColor;
 		}
-		return Std.parseInt(bgColor);
+		return FlxColor.fromString(bgColor);  // Idk the old method was a bit fucked up  - Nex
 	}
 
 	private function unselectableCheck(num:Int):Bool {
