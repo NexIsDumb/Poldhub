@@ -2,7 +2,7 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin': Psych Engine" file="PsychEngine" packageName="com.shadowmario.psychengine" package="com.shadowmario.psychengine" main="Main" version="0.2.8" company="ShadowMario" />
+	<app title="Friday Night Funkin': Poldhub Version DEMO" file="Poldhub DEMO" packageName="com.nexisdumb.poldhub" package="com.nexisdumb.poldhub" main="Main" version="0.2.8" company="Nex_isDumb" />
 
 	<!--Switch Export with Unique ApplicationID and Icon-->
 	<set name="APP_ID" value="0x0100f6c013bbc000" />
@@ -170,8 +170,12 @@
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
 	
-	<icon path="art/icon16.png" size='16'/>
-	<icon path="art/icon32.png" size='32'/>
-	<icon path="art/icon64.png" size='64'/>
-	<icon path="art/iconOG.png" />
+	<icon path="art/poldoDeiPoveri.png" size='16'/>
+	<icon path="art/papara32.png" size='32'/>
+	<icon path="art/papara64.png" size='64'/>
+	<icon path="art/papara.png" />
+
+	<!-- PARTE AGGIUNTA DA NEX PER ELIMINARE L'ICON.ICO PERCHE' SCASSAVA I COGLIONI -->
+	<postbuild command='del export\release\windows\bin\icon.ico' if="windows"/>
+	<postbuild command='del export\debug\windows\bin\icon.ico' if="windows debug"/>
 </project>
