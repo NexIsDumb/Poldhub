@@ -34,6 +34,7 @@ class MainMenuState extends MusicBeatState
 	
 	var optionShit:Array<String> = [
 		//'story_mode',
+		'story_mode_locked',
 		'freeplay',
 		'shop_locked',
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
@@ -176,7 +177,7 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin) menuItems.forEach(function(spr:FlxSprite)
 		{
-			if(optionShit[curSelected] == 'shop_locked' && spr.ID == curSelected && spr.alpha != 0.4) {
+			if(optionShit[curSelected].endsWith('_locked') && spr.ID == curSelected && spr.alpha != 0.4) {
 				spr.alpha = FlxMath.lerp(0.4, spr.alpha, CoolUtil.boundTo(1 - (elapsed * 20), 0.4, 1));
 			}
 			else if(spr.alpha != 1) spr.alpha = FlxMath.lerp(1, spr.alpha, CoolUtil.boundTo(1 - (elapsed * 20), 0.4, 1));
@@ -210,9 +211,9 @@ class MainMenuState extends MusicBeatState
 			{
 				if (optionShit[curSelected] == 'donate')
 				{
-					CoolUtil.browserLoad('https://arkadiastore.com/collections/poldo');
+					CoolUtil.browserLoad('https://fantasiastore.it/it/566-poldo');
 				}
-				else if (optionShit[curSelected] == 'shop_locked')
+				else if (optionShit[curSelected].endsWith('_locked'))
 				{
 					FlxG.sound.play(Paths.sound('cancelMenu'));
 					FlxFlicker.flicker(menuItems.members[curSelected], 1, 0.06, true, true);
