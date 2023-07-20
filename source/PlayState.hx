@@ -173,6 +173,7 @@ class PlayState extends MusicBeatState
 	public var opponentStrums:FlxTypedGroup<StrumNote>;
 	public var playerStrums:FlxTypedGroup<StrumNote>;
 	public var grpNoteSplashes:FlxTypedGroup<NoteSplash>;
+	private var grpUnderlay:FlxTypedGroup<FlxSprite>;
 
 	public var camZooming:Bool = false;
 	public var camZoomingMult:Float = 1;
@@ -1068,7 +1069,7 @@ class PlayState extends MusicBeatState
 		if(ClientPrefs.downScroll) strumLine.y = FlxG.height - 150;
 		strumLine.scrollFactor.set();
 
-		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
+		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabilitato');
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
 		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
@@ -1077,7 +1078,7 @@ class PlayState extends MusicBeatState
 		timeTxt.visible = showTime;
 		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 44;
 
-		if(ClientPrefs.timeBarType == 'Song Name')
+		if(ClientPrefs.timeBarType == 'Nome canzone')
 		{
 			timeTxt.text = SONG.song;
 		}
@@ -1105,11 +1106,17 @@ class PlayState extends MusicBeatState
 		add(timeTxt);
 		timeBarBG.sprTracker = timeBar;
 
+		if (ClientPrefs.scrollUnderlay > 0) {
+			grpUnderlay = new FlxTypedGroup<FlxSprite>();
+			grpUnderlay.cameras = [camHUD];
+			add(grpUnderlay);
+		}
+
 		strumLineNotes = new FlxTypedGroup<StrumNote>();
 		add(grpNoteSplashes);
 		add(strumLineNotes);
 
-		if(ClientPrefs.timeBarType == 'Song Name')
+		if(ClientPrefs.timeBarType == 'Nome canzone')
 		{
 			timeTxt.size = 24;
 			timeTxt.y += 3;
@@ -1360,7 +1367,7 @@ class PlayState extends MusicBeatState
 
 		if (PauseSubState.songName != null) {
 			precacheList.set(PauseSubState.songName, 'music');
-		} else if(ClientPrefs.pauseMusic != 'None') {
+		} else if(ClientPrefs.pauseMusic != 'Nessuna') {
 			precacheList.set(Paths.formatToSongPath(ClientPrefs.pauseMusic), 'music');
 		}
 
@@ -1377,6 +1384,7 @@ class PlayState extends MusicBeatState
 			FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
 		}
 		callOnLuas('onCreatePost', []);
+		if (ClientPrefs.cachedGameOvers) addCharacterToList(GameOverSubstate.characterName, 0);
 
 		super.create();
 
@@ -2108,6 +2116,13 @@ class PlayState extends MusicBeatState
 				setOnLuas('defaultOpponentStrumX' + i, opponentStrums.members[i].x);
 				setOnLuas('defaultOpponentStrumY' + i, opponentStrums.members[i].y);
 				//if(ClientPrefs.middleScroll) opponentStrums.members[i].visible = false;
+			}
+
+			if (ClientPrefs.scrollUnderlay > 0) for (i in 0...strumLineNotes.length) {
+				var underlay:FlxSprite = new FlxSprite(0, -30).makeGraphic(112, FlxG.height + 60, FlxColor.BLACK);
+				underlay.alpha = ClientPrefs.scrollUnderlay;
+				underlay.ID = i;  // Giusto per precauzione  - Nex
+				grpUnderlay.add(underlay);
 			}
 
 			startedCountdown = true;
@@ -2864,6 +2879,16 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
+		if (ClientPrefs.scrollUnderlay > 0) grpUnderlay.forEachAlive(function(undr:FlxSprite) {
+			if (strumLineNotes.members[undr.ID] != null) {
+				undr.x = strumLineNotes.members[undr.ID].x - 10;
+				undr.visible = strumLineNotes.members[undr.ID].visible;
+				if (strumLineNotes.members[undr.ID].alpha < ClientPrefs.scrollUnderlay) {
+					undr.alpha = strumLineNotes.members[undr.ID].alpha;
+				}
+			}
+		});
+
 		/*if (FlxG.keys.justPressed.NINE)
 		{
 			iconP1.swapOldIcon();
@@ -3021,7 +3046,7 @@ class PlayState extends MusicBeatState
 							camHUD.alpha = 1;
 
 							if(ClientPrefs.timeBarType == 'Nome canzone')
-							{ 
+							{
 								timeTxt.y = 14;
 								timeTxt.size = 36;
 								timeTxt.text = "Xiuder-EDD";
@@ -3137,12 +3162,12 @@ class PlayState extends MusicBeatState
 					songPercent = (curTime / songLength);
 
 					var songCalc:Float = (songLength - curTime);
-					if(ClientPrefs.timeBarType == 'Time Elapsed') songCalc = curTime;
+					if(ClientPrefs.timeBarType == 'Tempo Trascorso') songCalc = curTime;
 
 					var secondsTotal:Int = Math.floor(songCalc / 1000);
 					if(secondsTotal < 0) secondsTotal = 0;
 
-					if(ClientPrefs.timeBarType != 'Song Name')
+					if(ClientPrefs.timeBarType != 'Nome canzone')
 						timeTxt.text = FlxStringUtil.formatTime(secondsTotal, false);
 				}
 			}

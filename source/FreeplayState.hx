@@ -382,8 +382,7 @@ class FreeplayState extends MusicBeatState
 			if (FlxG.keys.pressed.SHIFT) {
 				LoadingState.loadAndSwitchState(new ChartingState());
 				FlxG.sound.music.volume = 0;
-				destroyFreeplayVocals();
-			} else {  // Parte modificata interamente da Nex
+			} else {
 				if (PlayState.SONG.player1 == null) {
 					FlxTween.tween(FlxG.sound.music, {pitch: 0}, 0.6);
 					LoadingState.loadAndSwitchState(new CharSelectorState());
@@ -391,9 +390,9 @@ class FreeplayState extends MusicBeatState
 				} else {
 					LoadingState.loadAndSwitchState(new PlayState());
 					FlxG.sound.music.volume = 0;
-					destroyFreeplayVocals();
 				}
 			}
+			destroyFreeplayVocals();
 		}
 		else if(controls.RESET)
 		{

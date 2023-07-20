@@ -31,35 +31,35 @@ class ControlsSubState extends MusicBeatSubstate {
 	private static var curSelected:Int = 1;
 	private static var curAlt:Bool = false;
 
-	private static var defaultKey:String = 'Reset to Default Keys';
+	private static var defaultKey:String = 'Ripristina Tasti Predefiniti';
 	private var bindLength:Int = 0;
 
 	var optionShit:Array<Dynamic> = [
-		['NOTES'],
-		['Left', 'note_left'],
-		['Down', 'note_down'],
-		['Up', 'note_up'],
-		['Right', 'note_right'],
+		['NOTE'],
+		['Sinistra', 'note_left'],
+		['Sotto', 'note_down'],
+		['Sopra', 'note_up'],
+		['Destra', 'note_right'],
 		[''],
-		['UI'],
-		['Left', 'ui_left'],
-		['Down', 'ui_down'],
-		['Up', 'ui_up'],
-		['Right', 'ui_right'],
+		['INTERFACCIA'],
+		['Sinistra', 'ui_left'],
+		['Sotto', 'ui_down'],
+		['Sopra', 'ui_up'],
+		['Destra', 'ui_right'],
 		[''],
 		['Reset', 'reset'],
-		['Accept', 'accept'],
-		['Back', 'back'],
-		['Pause', 'pause'],
+		['Accetta', 'accept'],
+		['Indietro', 'back'],
+		['Pausa', 'pause'],
 		[''],
 		['VOLUME'],
-		['Mute', 'volume_mute'],
-		['Up', 'volume_up'],
-		['Down', 'volume_down'],
+		['Muto', 'volume_mute'],
+		['Alza', 'volume_up'],
+		['Abbassa', 'volume_down'],
 		[''],
 		['DEBUG'],
-		['Key 1', 'debug_1'],
-		['Key 2', 'debug_2']
+		['Tasto 1', 'debug_1'],
+		['Tasto 2', 'debug_2']
 	];
 
 	private var grpOptions:FlxTypedGroup<Alphabet>;

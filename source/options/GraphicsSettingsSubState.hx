@@ -37,15 +37,15 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		rpcTitle = "Menu' delle Impostazioni di Grafica"; //for Discord Rich Presence
 
 		//I'd suggest using "Low Quality" as an example for making your own option since it is the simplest here
-		var option:Option = new Option('Low Quality', //Name
-			'If checked, disables some background details,\ndecreases loading times and improves performance.', //Description
+		var option:Option = new Option('Qualita\' Bassa', //Name
+			'Se spuntato, disabilita alcuni dettagli dei Backgrounds,\ndiminuisce il tempo dei caricamenti e migliora la performance.', //Description
 			'lowQuality', //Save data variable name
 			'bool', //Variable type
 			false); //Default value
 		addOption(option);
 
 		var option:Option = new Option('Anti-Aliasing',
-			'If unchecked, disables anti-aliasing, increases performance\nat the cost of sharper visuals.',
+			'Se non spuntato, disabilita l\'anti-aliasing, incrementa la\nperformance ma diminuisce la qualità.',
 			'globalAntialiasing',
 			'bool',
 			true);
@@ -54,15 +54,22 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		addOption(option);
 
 		var option:Option = new Option('Shaders', //Name
-			'If unchecked, disables shaders.\nIt\'s used for some visual effects, and also CPU intensive for weaker PCs.', //Description
+			'Se non spuntato, disabilita le shaders.\nSono utilizzate per alcuni effetti visivi, e anche\nper un uso intensivo della CPU per i PC più deboli.', //Description
 			'shaders', //Save data variable name
 			'bool', //Variable type
 			true); //Default value
 		addOption(option);
 
+		var option:Option = new Option('Game Over Memorizzati',  // Aggiunta da Nex
+			'Se spuntato le schermate di Game Over verranno memorizzate\nconsumando più memoria ma rende i caricamenti per i Game Over\nistantanei.',
+			'cachedGameOvers',
+			'bool',
+			false);
+		addOption(option);
+
 		#if !html5 //Apparently other framerates isn't correctly supported on Browser? Probably it has some V-Sync shit enabled by default, idk
 		var option:Option = new Option('Framerate',
-			"Pretty self explanatory, isn't it?",
+			"Abbastanza autoesplicativo, non lo trovi?",
 			'framerate',
 			'int',
 			60);
