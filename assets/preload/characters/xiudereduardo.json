@@ -1,0 +1,79 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-39,
+				-23
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Xiuder down"
+		},
+		{
+			"offsets": [
+				-58,
+				17
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Xiuder up"
+		},
+		{
+			"offsets": [
+				-68,
+				9
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Xiuder right"
+		},
+		{
+			"offsets": [
+				-5,
+				3
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Xiuder left"
+		},
+		{
+			"offsets": [
+				-30,
+				6
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Xiuder idle"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Xiuder_eduardo",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "xiuder",
+	"death_character": "",
+	"flip_x": false,
+	"healthbar_colors": [
+		175,
+		122,
+		126
+	],
+	"camera_position": [
+		90,
+		20
+	],
+	"sing_duration": 6.1,
+	"scale": 1.5
+}

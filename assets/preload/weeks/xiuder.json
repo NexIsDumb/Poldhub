@@ -1,0 +1,32 @@
+{
+	"songs": [
+		[
+			"XiuderED",
+			"xiuder",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"difficulties": "Easy, Normal, Hard, Expert, Expert+",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "xiuder",
+	"weekName": "xiuderWeek",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": true,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

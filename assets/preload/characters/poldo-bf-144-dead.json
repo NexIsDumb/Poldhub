@@ -1,0 +1,57 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				950
+			],
+			"anim": "firstDeath",
+			"fps": 24,
+			"name": "BF dies",
+			"indices": []
+		},
+		{
+			"loop": true,
+			"offsets": [
+				-183,
+				5
+			],
+			"anim": "deathLoop",
+			"fps": 24,
+			"name": "BF Dead Loop",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-183,
+				78
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "BF Dead confirm",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Poldobf-144-DEAD",
+	"position": [
+		0,
+		350
+	],
+	"healthicon": "144",
+	"death_character": "",
+	"flip_x": true,
+	"healthbar_colors": [
+		203,
+		42,
+		48
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

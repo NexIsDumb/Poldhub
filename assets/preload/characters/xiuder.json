@@ -1,0 +1,79 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				-87,
+				1
+			],
+			"anim": "singDOWN",
+			"fps": 24,
+			"name": "XiuderDOWN",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-46,
+				82
+			],
+			"anim": "singUP",
+			"fps": 24,
+			"name": "XiuderUP",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-139,
+				-3
+			],
+			"anim": "singRIGHT",
+			"fps": 24,
+			"name": "XiuderRIGHT",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				106,
+				2
+			],
+			"anim": "singLEFT",
+			"fps": 24,
+			"name": "XiuderLeft",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				30
+			],
+			"anim": "idle",
+			"fps": 24,
+			"name": "XiuderIdle",
+			"indices": []
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Xiuder",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "xiuder",
+	"death_character": "",
+	"flip_x": false,
+	"healthbar_colors": [
+		175,
+		122,
+		126
+	],
+	"camera_position": [
+		0,
+		0
+	],
+	"sing_duration": 6.1,
+	"scale": 1.5
+}

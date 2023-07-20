@@ -1,0 +1,32 @@
+{
+	"songs": [
+		[
+			"Cooking Mirko",
+			"ciccio",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "",
+	"difficulties": "Easy, Normal, Hard, Expert, Expert+",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "ciccio",
+	"weekName": "ciccioWeek",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": true,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

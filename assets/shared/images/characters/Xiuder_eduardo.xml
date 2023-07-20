@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Xiuder_eduardo.png">
+	<!-- Created with Adobe Animate version 22.0.5.191 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Xiuder down0000" x="5" y="5" width="351" height="673" frameX="0" frameY="-4" frameWidth="351" frameHeight="677"/>
+	<SubTexture name="Xiuder down0001" x="5" y="5" width="351" height="673" frameX="0" frameY="-4" frameWidth="351" frameHeight="677"/>
+	<SubTexture name="Xiuder down0002" x="366" y="5" width="349" height="677" frameX="-2" frameY="0" frameWidth="351" frameHeight="677"/>
+	<SubTexture name="Xiuder down0003" x="366" y="5" width="349" height="677" frameX="-2" frameY="0" frameWidth="351" frameHeight="677"/>
+	<SubTexture name="Xiuder down0004" x="366" y="5" width="349" height="677" frameX="-2" frameY="0" frameWidth="351" frameHeight="677"/>
+	<SubTexture name="Xiuder idle0000" x="725" y="5" width="358" height="674" frameX="-5" frameY="-24" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0001" x="1093" y="5" width="351" height="674" frameX="-10" frameY="-24" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0002" x="1093" y="5" width="351" height="674" frameX="-10" frameY="-24" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0003" x="1454" y="5" width="343" height="684" frameX="-13" frameY="-14" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0004" x="1454" y="5" width="343" height="684" frameX="-13" frameY="-14" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0005" x="1807" y="5" width="352" height="697" frameX="-4" frameY="-1" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0006" x="2169" y="5" width="355" height="699" frameX="0" frameY="0" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0007" x="2169" y="5" width="355" height="699" frameX="0" frameY="0" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0008" x="2169" y="5" width="355" height="699" frameX="0" frameY="0" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0009" x="2169" y="5" width="355" height="699" frameX="0" frameY="0" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0010" x="2169" y="5" width="355" height="699" frameX="0" frameY="0" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0011" x="2169" y="5" width="355" height="699" frameX="0" frameY="0" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0012" x="2169" y="5" width="355" height="699" frameX="0" frameY="0" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder idle0013" x="2169" y="5" width="355" height="699" frameX="0" frameY="0" frameWidth="363" frameHeight="699"/>
+	<SubTexture name="Xiuder left0000" x="2534" y="5" width="353" height="695" frameX="0" frameY="0" frameWidth="354" frameHeight="696"/>
+	<SubTexture name="Xiuder left0001" x="2534" y="5" width="353" height="695" frameX="0" frameY="0" frameWidth="354" frameHeight="696"/>
+	<SubTexture name="Xiuder left0002" x="2897" y="5" width="331" height="696" frameX="-23" frameY="0" frameWidth="354" frameHeight="696"/>
+	<SubTexture name="Xiuder left0003" x="2897" y="5" width="331" height="696" frameX="-23" frameY="0" frameWidth="354" frameHeight="696"/>
+	<SubTexture name="Xiuder left0004" x="2897" y="5" width="331" height="696" frameX="-23" frameY="0" frameWidth="354" frameHeight="696"/>
+	<SubTexture name="Xiuder right0000" x="3238" y="5" width="365" height="698" frameX="0" frameY="-2" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0001" x="3238" y="5" width="365" height="698" frameX="0" frameY="-2" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0002" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0003" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0004" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0005" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0006" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0007" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0008" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0009" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0010" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0011" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0012" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder right0013" x="3613" y="5" width="357" height="700" frameX="-3" frameY="0" frameWidth="365" frameHeight="700"/>
+	<SubTexture name="Xiuder up0000" x="5" y="715" width="334" height="706" frameX="0" frameY="0" frameWidth="335" frameHeight="706"/>
+	<SubTexture name="Xiuder up0001" x="5" y="715" width="334" height="706" frameX="0" frameY="0" frameWidth="335" frameHeight="706"/>
+	<SubTexture name="Xiuder up0002" x="349" y="715" width="330" height="701" frameX="-5" frameY="-5" frameWidth="335" frameHeight="706"/>
+	<SubTexture name="Xiuder up0003" x="349" y="715" width="330" height="701" frameX="-5" frameY="-5" frameWidth="335" frameHeight="706"/>
+	<SubTexture name="Xiuder up0004" x="349" y="715" width="330" height="701" frameX="-5" frameY="-5" frameWidth="335" frameHeight="706"/>
+</TextureAtlas>
