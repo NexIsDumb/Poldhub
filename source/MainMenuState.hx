@@ -39,6 +39,7 @@ class MainMenuState extends MusicBeatState
 		'shop_locked',
 		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
+		'donazioni',
 		'options',
 		#if !switch 'donate' #end
 	];
@@ -212,6 +213,9 @@ class MainMenuState extends MusicBeatState
 				if (optionShit[curSelected] == 'donate')
 				{
 					CoolUtil.browserLoad('https://fantasiastore.it/it/566-poldo');
+				}
+				else if (optionShit[curSelected] == 'donazioni') {
+					CoolUtil.browserLoad('https://www.paypal.com/paypalme/paolovillotta1');
 				}
 				else if (optionShit[curSelected].endsWith('_locked'))
 				{
