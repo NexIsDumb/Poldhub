@@ -5197,7 +5197,7 @@ class PlayState extends MusicBeatState
 			case 'xiuderone':
 				switch (curBeat) {
 					case 156:
-						FlxG.camera.fade(FlxColor.WHITE, 1, true, true);
+						if(ClientPrefs.flashing) FlxG.camera.fade(FlxColor.WHITE, 1, true, true);
 				}
 		}
 
