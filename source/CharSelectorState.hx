@@ -313,6 +313,8 @@ class CharSelectorState extends MusicBeatState
 			daChar.destroy();
 			--i;
 		}
+
+        if (FlxG.sound.music.pitch != 1) FlxG.sound.music.pitch = 1;  // Per qualsiasi caso possibile  - Nex
         super.destroy();
     }
 }

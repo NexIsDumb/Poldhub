@@ -86,6 +86,12 @@ class OptionsState extends MusicBeatState
 		changeSelection();
 		ClientPrefs.saveSettings();
 
+		FreeplayState.destroyFreeplayVocals();
+		FlxG.sound.playMusic(Paths.music('starRelax'), 0);
+		FlxG.sound.music.pitch = 0;
+		FlxG.sound.music.volume = 1;
+		lol = FlxTween.tween(FlxG.sound.music, {pitch: 1}, 2);
+
 		super.create();
 	}
 
@@ -94,10 +100,8 @@ class OptionsState extends MusicBeatState
 		ClientPrefs.saveSettings();
 	}
 
+	var lol:FlxTween;
 	override function update(elapsed:Float) {
-		if (fromPause && PauseSubState.pauseMusic.volume < 0.5)
-			PauseSubState.pauseMusic.volume += 0.01 * elapsed;
-
 		super.update(elapsed);
 
 		if (controls.UI_UP_P) {
@@ -109,21 +113,31 @@ class OptionsState extends MusicBeatState
 
 		if (controls.BACK) {
 			FlxG.sound.play(Paths.sound('cancelMenu'));
-			if (fromPause)
-			{
-				fromPause = false;
-				StageData.loadDirectory(PlayState.SONG);
-				LoadingState.loadAndSwitchState(new PlayState());
-				PauseSubState.pauseMusic.destroy();
+			if (!fromPause) {  // Robe per il pause menu  - Nex
+				if (!lol.finished) lol.cancelChain();
+				FlxG.sound.music.pitch = 1;
+				FlxG.sound.playMusic(Paths.music('freakyMenu'));
+				MusicBeatState.switchState(new MainMenuState());
 			}
-			else MusicBeatState.switchState(new MainMenuState());
+			else {
+				fromPause = false;
+				FlxTween.tween(FlxG.sound.music, {pitch: 0}, 0.6, {onComplete: function(twn:FlxTween) FlxG.sound.music.volume = 0});
+				StageData.loadDirectory(PlayState.SONG);
+				LoadingState.loadAndSwitchState(new PlayState(), true);
+			}
 		}
 
 		if (controls.ACCEPT) {
 			openSelectedSubstate(options[curSelected]);
 		}
 	}
-	
+
+	override function destroy()
+	{
+		if (FlxG.sound.music.pitch != 1) FlxG.sound.music.pitch = 1;  // Per qualsiasi caso possibile  - Nex
+		super.destroy();
+	}
+
 	function changeSelection(change:Int = 0) {
 		curSelected += change;
 		if (curSelected < 0)

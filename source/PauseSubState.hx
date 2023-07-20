@@ -269,6 +269,7 @@ class PauseSubState extends MusicBeatSubstate
 				case 'Options':
 					pauseMusic.persist = true;
 					options.OptionsState.fromPause = true;
+					FlxTween.tween(pauseMusic, {pitch: 0}, 0.6, {onComplete: function(twn:FlxTween) pauseMusic.destroy()});
 					LoadingState.loadAndSwitchState(new options.OptionsState());
 				case "Cambia Skin":
 					pauseMusic.persist = true;

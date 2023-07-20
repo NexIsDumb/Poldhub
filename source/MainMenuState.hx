@@ -254,6 +254,7 @@ class MainMenuState extends MusicBeatState
 									case 'credits':
 										MusicBeatState.switchState(new CreditsState());
 									case 'options':
+										FlxTween.tween(FlxG.sound.music, {pitch: 0}, 0.6);
 										LoadingState.loadAndSwitchState(new options.OptionsState());
 								}
 							});
