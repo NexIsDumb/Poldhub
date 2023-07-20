@@ -100,7 +100,6 @@ class CreditsState extends MusicBeatState
 			['Dia',					'dia',				"Animatrice del trailer",											'https://youtube.com/@hiDia', '461D9A'],
 			['Marcronis',			'maccherone',		"Animatore del trailer",											'https://www.youtube.com/@marcronis9444',		'C34167'],
 			['Erva',				'erva',				"Editor del trailer",												'https://linktr.ee/itserva', '84AEE0'],
-			['Yuri',				'yuri',				"Doppiatrice dei dialoghi di Jenshin",								'https://youtube.com/@yuriartchannel',	'D1290E'],
 			[''],
 			['Team di Psych Engine'],
 			['Shadow Mario',		'shadowmario',		'Programmatore Principale di Psych Engine',						    'https://twitter.com/Shadow_Mario_',	'444444'],
