@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Paola.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Paola0000" x="100" y="100" width="146" height="264" frameX="0" frameY="-10" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0001" x="100" y="100" width="146" height="264" frameX="0" frameY="-10" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0002" x="346" y="100" width="140" height="270" frameX="-3" frameY="-4" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0003" x="346" y="100" width="140" height="270" frameX="-3" frameY="-4" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0004" x="586" y="100" width="138" height="273" frameX="-4" frameY="-1" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0005" x="586" y="100" width="138" height="273" frameX="-4" frameY="-1" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0006" x="100" y="473" width="138" height="274" frameX="-4" frameY="0" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0007" x="100" y="473" width="138" height="274" frameX="-4" frameY="0" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0008" x="100" y="473" width="138" height="274" frameX="-4" frameY="0" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0009" x="100" y="473" width="138" height="274" frameX="-4" frameY="0" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0010" x="100" y="473" width="138" height="274" frameX="-4" frameY="0" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0011" x="100" y="473" width="138" height="274" frameX="-4" frameY="0" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0012" x="100" y="473" width="138" height="274" frameX="-4" frameY="0" frameWidth="146" frameHeight="274"/>
+	<SubTexture name="Paola0013" x="100" y="473" width="138" height="274" frameX="-4" frameY="0" frameWidth="146" frameHeight="274"/>
+</TextureAtlas>

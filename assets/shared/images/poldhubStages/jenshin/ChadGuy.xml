@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ChadGuy.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="ChadGuy0000" x="100" y="100" width="161" height="318" frameX="0" frameY="-12" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0001" x="100" y="100" width="161" height="318" frameX="0" frameY="-12" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0002" x="361" y="100" width="157" height="326" frameX="-1" frameY="-4" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0003" x="361" y="100" width="157" height="326" frameX="-1" frameY="-4" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0004" x="618" y="100" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0005" x="618" y="100" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0006" x="100" y="530" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0007" x="100" y="530" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0008" x="356" y="530" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0009" x="356" y="530" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0010" x="356" y="530" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0011" x="356" y="530" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0012" x="356" y="530" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+	<SubTexture name="ChadGuy0013" x="356" y="530" width="156" height="330" frameX="-1" frameY="0" frameWidth="161" frameHeight="330"/>
+</TextureAtlas>

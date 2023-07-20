@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Tizio20.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Tizio200000" x="100" y="100" width="128" height="173" frameX="0" frameY="-13" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200001" x="100" y="100" width="128" height="173" frameX="0" frameY="-13" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200002" x="328" y="100" width="124" height="176" frameX="-2" frameY="-9" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200003" x="328" y="100" width="124" height="176" frameX="-2" frameY="-9" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200004" x="552" y="100" width="122" height="177" frameX="-4" frameY="-5" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200005" x="552" y="100" width="122" height="177" frameX="-4" frameY="-5" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200006" x="774" y="100" width="119" height="179" frameX="-5" frameY="-1" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200007" x="774" y="100" width="119" height="179" frameX="-5" frameY="-1" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200008" x="100" y="379" width="119" height="178" frameX="-5" frameY="0" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200009" x="100" y="379" width="119" height="178" frameX="-5" frameY="0" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200010" x="100" y="379" width="119" height="178" frameX="-5" frameY="0" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200011" x="100" y="379" width="119" height="178" frameX="-5" frameY="0" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200012" x="100" y="379" width="119" height="178" frameX="-5" frameY="0" frameWidth="128" frameHeight="186"/>
+	<SubTexture name="Tizio200013" x="100" y="379" width="119" height="178" frameX="-5" frameY="0" frameWidth="128" frameHeight="186"/>
+</TextureAtlas>

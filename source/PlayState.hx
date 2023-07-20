@@ -273,6 +273,7 @@ class PlayState extends MusicBeatState
 	var benebene:BGSprite;
 	var blackout = new FlxSprite ();
 	var sediona2:BGSprite;
+	var tuamadre = new FlxText();
 
 	public var songScore:Int = 0;
 	public var songHits:Int = 0;
@@ -382,6 +383,11 @@ class PlayState extends MusicBeatState
 		rating.score = 50;
 		rating.noteSplash = false;
 		ratingsData.push(rating);
+
+		tuamadre = new FlxText(0, 290, FlxG.width, "AH", 20);
+		tuamadre.setFormat(Paths.font("magmasangue.otf"), 108, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		tuamadre.visible = false;
+		tuamadre.scrollFactor.set();
 
 		// For the "Just the Two of Us" achievement
 		for (i in 0...keysArray.length)
@@ -873,17 +879,27 @@ class PlayState extends MusicBeatState
 				var BG2:BGSprite = new BGSprite('poldhubStages/jenshin/BG2', -950, -400, 0.75, 0.75);
 				var BG1:BGSprite = new BGSprite('poldhubStages/jenshin/BG1', -1000, -400, 0.9, 0.9);
 				var ground:BGSprite = new BGSprite('poldhubStages/jenshin/Ground', -1100, -400, 1, 1);
+				var spec1:BGSprite = new BGSprite('poldhubStages/jenshin/Tizio20', -500, 100, 1, 1, ['Tizio20'], true);
+				var spec2:BGSprite = new BGSprite('poldhubStages/jenshin/Paola', -800, 250, 1, 1, ['Paola'], true);
+				var spec3:BGSprite = new BGSprite('poldhubStages/jenshin/ChadGuy', 950, 160, 1, 1, ['ChadGuy'], true);
 
 				BG2.scale.set(0.9, 0.9);
 				BG1.scale.set(0.9, 0.9);
 				ground.scale.set(0.9, 0.9);
+				spec1.scale.set(2, 2);
+				spec2.scale.set(2.3, 2.3);
+				spec3.scale.set(2.3, 2.3);
 
 				add(BG2);
 				add(BG1);
+				add(spec1);
 				add(ground);
+				add(spec2);
+				add(spec3);
+
 				if(!ClientPrefs.lowQuality) {
 					foregroundSprites = new FlxTypedGroup<BGSprite>();
-					foregroundSprites.add(new BGSprite('poldhubStages/jenshin/FG1', -1100, -400, 1.1, 1.1));
+					foregroundSprites.add(new BGSprite('poldhubStages/jenshin/FG1', -1100, -550, 1.1, 1.1));
 				}
 		}
 
@@ -910,6 +926,7 @@ class PlayState extends MusicBeatState
 			case 'xiuderone':
 				add(sediona2);
 				add(blackout);
+				add(tuamadre);
 
 			default:  // Parte modificata da Nex
 				if (foregroundSprites != null) add(foregroundSprites);
@@ -3044,6 +3061,7 @@ class PlayState extends MusicBeatState
 						case 156:
 							blackout.alpha = 0;
 							camHUD.alpha = 1;
+							tuamadre.visible = false;
 
 							if(ClientPrefs.timeBarType == 'Nome canzone')
 							{
@@ -3052,7 +3070,39 @@ class PlayState extends MusicBeatState
 								timeTxt.text = "Xiuder-EDD";
 							}
 					}
-					//la roba dei sottotitoli deve poi diventare un evento, quindi niente curstep - Nile
+
+					//Lo faccio usando i curStep perché non abbiamo tempo - Nile	
+
+					switch(curStep) {  
+						case 589:
+							tuamadre.visible = true;
+							tuamadre.text = "AH";
+						case 592:
+							tuamadre.text = "AH AH";
+						case 595:
+							tuamadre.text = "AH AH AH";
+						case 598:
+							tuamadre.text = "AH AH AH AH";
+						case 600:
+							tuamadre.text = "AH AH AH AH AH";
+						case 606:
+							tuamadre.text = "MANU!";
+						case 613:
+							tuamadre.text = "TUA";
+						case 615:
+							tuamadre.text = "TUA MADRE!";
+						case 1280:
+							tuamadre.visible = true;
+							tuamadre.text = "NON";
+						case 1283:
+							tuamadre.text = "NON SI";
+						case 1285:
+							tuamadre.text = "NON SI SA";
+						case 1287:
+							tuamadre.text = "NON SI SA COME";
+						case 1289:
+							tuamadre.text = "NON SI SA COME MAI";
+					}
 				}
 		}
 
