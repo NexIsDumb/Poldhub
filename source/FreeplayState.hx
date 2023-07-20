@@ -385,8 +385,11 @@ class FreeplayState extends MusicBeatState
 			} else {
 				if (PlayState.SONG.player1 == null) {
 					FlxTween.tween(FlxG.sound.music, {pitch: 0}, 0.6);
-					LoadingState.loadAndSwitchState(new CharSelectorState());
-					skinSelected = true;
+					if(songs[curSelected].songName == 'Jenpact') MusicBeatState.switchState(new JenpactCutScene());
+					else {
+						LoadingState.loadAndSwitchState(new CharSelectorState());
+						skinSelected = true;
+					}
 				} else {
 					LoadingState.loadAndSwitchState(new PlayState());
 					FlxG.sound.music.volume = 0;

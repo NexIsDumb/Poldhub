@@ -158,6 +158,8 @@ class CharSelectorState extends MusicBeatState
                 daText = 'Boyfriend';
             case 'bf christmas':
                 daText = 'Winter BF';
+            case 'poldo bf chitarra':
+                daText = 'Poldo BF Old';
         }
         charName.text = daText + '\n' + skins[curSelected][1];
 
