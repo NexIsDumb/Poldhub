@@ -81,6 +81,27 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+			["Team della Demo di PoldHub"],	
+			['Prince', 				'prince', 			"Direttore della mod",														'https://instagram.com/prince_of_nothin?igshid=NGExMmI2YTkyZg==', 	'6FB6FF'],
+			['Magmah', 				'magma',			"Codirettore e compositore",										'https://www.youtube.com/@MagmaBlood',	'FF69EF'],
+			['RicRanX',				'ricranx',			"Scrittore dei dialoghi", 											'https://youtube.com/@ricran06', 		'F9C971'],
+			['Nex_isDumb',			'nex',				"Programmatore, artista\ne mappatore delle canzoni",				'https://linktr.ee/just_nex',			'999999'],
+			['Nile8182',			'nile',				"Programmatore, artista (sfondi jenshin e ciccio),\nanimatore (cicciogamer89) e mappatore delle canzoni",		'https://linktr.ee/8182nile',			'FFFFFF'],
+			['Firenova',			'firenova',			"Programmatore e artista",											'https://www.youtube.com/channel/UCnj3Ht5DWXwa92tl_Q3TQvQ',	'C72424'],
+			['Gianpaolo Catondo',	'gianpaolo-catondo',	"Artista e animatore\n(elementi della ui)",						'https://www.youtube.com/watch?v=T1h1e1XOwys&ab_channel=SnoozerIIVMMXIV',	'E5E1FF'],
+			['MattNotHere',			'mhanzarella',		"Artista e animatore (xiuder, jenshin),\n icone dei crediti e dei personaggi",		'', 	'6E4C44'],
+			['Ava',					'ava',				"Artista e animatrice\n(charlotte)",								'https://twitter.com/AvofuNG',	'282866'],
+			['GabriFulup13',		'gabri', 			"Artista e animatore\n(menu e 144-poldo)",							'https://www.youtube.com/channel/UCwsFK4Bx1IRVXlu5icW31kw', 'FFBC54'],
+			['SUSGuy',				'susguy',			"Artista\n(sfondo xiuder)", 										'https://www.youtube.com/channel/UC957njdNZS4Zosot0XIy6rQ', 'FF0000'],
+			['IlPandaJack',			'takki',			"Artista\n(sfondi jenshin e ciccio)",								'https://twitter.com/ilpandajackk',		'A430E1'],
+			['Pat',					'pat',				"Fumettista",														'https://www.instagram.com/_thisis.pat_/', 	'80CC80'],
+			['Andr3x',				'andrex',			"Mappatore delle canzoni",											'https://linktr.ee/andr3x40', 			'2D2D91'],
+			['BragBigfoot',			'brag',				"Mappatore delle canzoni",											'https://www.youtube.com/channel/UCikA97r1cCsoo27NyPmkxIg',	'9793B1'],
+			['Dia',					'dia',				"Animatrice del trailer",											'https://youtube.com/@hiDia', '461D9A'],
+			['Marcronis',			'maccherone',		"Animatore del trailer",											'https://www.youtube.com/@marcronis9444',		'C34167'],
+			['Erva',				'erva',				"Editor del trailer",												'https://linktr.ee/itserva', '84AEE0'],
+			['Yuri',				'yuri',				"Doppiatrice dei dialoghi di Jenshin",								'https://youtube.com/@yuriartchannel',	'D1290E'],
+			[''],
 			['Team di Psych Engine'],
 			['Shadow Mario',		'shadowmario',		'Programmatore Principale di Psych Engine',						    'https://twitter.com/Shadow_Mario_',	'444444'],
 			['RiverOaken',			'river',			'Artista/Animatrice Principale di Psych Engine',				    'https://twitter.com/RiverOaken',		'B42F71'],
@@ -103,7 +124,7 @@ class CreditsState extends MusicBeatState
 			['ninjamuffin99',		'ninjamuffin99',	"Programmatore di Friday Night Funkin'",						    'https://twitter.com/ninja_muffin99',	'CF2D2D'],
 			['PhantomArcade',		'phantomarcade',	"Animatore di Friday Night Funkin'",							    'https://twitter.com/PhantomArcade3K',	'FADC45'],
 			['evilsk8r',			'evilsk8r',			"Artista di Friday Night Funkin'",								    'https://twitter.com/evilsk8r',			'5ABD4B'],
-			['kawaisprite',			'kawaisprite',		"Compositore di Friday Night Funkin'",							    'https://twitter.com/kawaisprite',		'378FC7']
+			['kawaisprite',			'kawaisprite',		"Compositore di Friday Night Funkin'",							    'https://twitter.com/kawaisprite',		'378FC7'],			
 		];
 		
 		for(i in pisspoop){
