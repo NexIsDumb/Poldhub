@@ -256,9 +256,9 @@ class DialogueEditorState extends MusicBeatState
 		#if desktop
 		// Updating Discord Rich Presence
 		var rpcText:String = lineInputText.text;
-		if(rpcText == null || rpcText.length < 1) rpcText = '(Empty)';
+		if(rpcText == null || rpcText.length < 1) rpcText = '(Vuoto)';
 		if(rpcText.length < 3) rpcText += '   '; //Fixes a bug on RPC that triggers an error when the text is too short
-		DiscordClient.changePresence("Dialogue Editor", rpcText);
+		DiscordClient.changePresence("Editor dei Dialoghi", rpcText);
 		#end
 	}
 

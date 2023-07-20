@@ -48,8 +48,8 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	{
 		super();
 
-		if(title == null) title = 'Options';
-		if(rpcTitle == null) rpcTitle = 'Options Menu';
+		if(title == null) title = 'Opzioni';
+		if(rpcTitle == null) rpcTitle = "Menu delle Opzioni";
 		
 		#if desktop
 		DiscordClient.changePresence(rpcTitle, null);
