@@ -1,5 +1,6 @@
 package;
 
+import flixel.util.FlxTimer;
 import flixel.util.FlxColor;
 import flixel.FlxCamera;
 import flixel.text.FlxText;
@@ -9,8 +10,8 @@ import flixel.FlxG;
 
 class JenpactCutScene extends MusicBeatState
 {
-    private var camHUD:FlxCamera;
-    var camFollow:FlxObject;
+    private var pulsantone:FlxSprite;
+    private var camFollow:FlxObject;
 
     override function create()
     {
@@ -27,12 +28,18 @@ class JenpactCutScene extends MusicBeatState
 		add(camFollow);
         FlxG.camera.follow(camFollow);
 
-        camHUD = new FlxCamera();
+        var camHUD:FlxCamera = new FlxCamera();
         FlxG.cameras.add(camHUD, false);
         camHUD.bgColor.alpha = 0;
 
+        var camOther:FlxCamera = new FlxCamera();
+        FlxG.cameras.add(camOther, false);
+        camOther.bgColor.alpha = 0;
+        CustomFadeTransition.nextCamera = camOther;
+
         var tipTextArray:Array<String> =
-        "Com Movimento (Opz) - Muovi Cam
+        "Comandi Movim (Opz) - Muovi Cam
+        \nShift - Movimento piu' veloce
         \nE/Q - Camera Zoom Avanti/Indietro
 		\nR - Reset Camera Zoom
 		\nAccetta per continuare".split('\n');
@@ -46,6 +53,18 @@ class JenpactCutScene extends MusicBeatState
 			tipText.borderSize = 1;
 			add(tipText);
 		}
+
+        pulsantone = new FlxSprite(FlxG.width - 280, FlxG.height - 270 - 16 * tipTextArray.length);
+        pulsantone.scale.set(0.6, 0.6);
+        pulsantone.frames = Paths.getSparrowAtlas('jenshin/pulsantone');
+        pulsantone.animation.addByPrefix('idle', 'Non Premuto Invio', 24);
+	    pulsantone.animation.addByPrefix('click', 'Premuto Invio', 24, false);
+        pulsantone.cameras = [camHUD];
+        pulsantone.animation.play('idle');
+        add(pulsantone);
+
+        super.create();
+        CustomFadeTransition.nextCamera = camOther;
     }
 
     override function update(elapsed:Float)
@@ -69,25 +88,39 @@ class JenpactCutScene extends MusicBeatState
             if (FlxG.keys.pressed.SHIFT)
                 addToCam *= 4;
 
-            if (controls.UI_UP)
+            if (controls.UI_UP && camFollow.y > -1000)
                 camFollow.y -= addToCam;
-            else if (controls.UI_DOWN)
+            else if (controls.UI_DOWN && camFollow.y < 500)
                 camFollow.y += addToCam;
 
-            if (controls.UI_LEFT)
+            if (controls.UI_LEFT && camFollow.x > -500)
                 camFollow.x -= addToCam;
-            else if (controls.UI_RIGHT)
+            else if (controls.UI_RIGHT && camFollow.x < 1000)
                 camFollow.x += addToCam;
         }
 
         if (controls.ACCEPT) {
-            if (PlayState.SONG.player1 == null) {
+            FlxG.sound.play(Paths.sound('confirmMenu'));
+            pulsantone.animation.play('click');
+            new FlxTimer().start(0.4, function(tmr:FlxTimer) if (PlayState.SONG.player1 == null) {
                 LoadingState.loadAndSwitchState(new CharSelectorState());
                 FreeplayState.skinSelected = true;
             } else {
                 LoadingState.loadAndSwitchState(new PlayState());
                 FlxG.sound.music.volume = 0;
-            }
+            });
         }
+        else if (controls.BACK) {  // Resetto anche le variabili del Playstate per sicurezza  - Nex
+            FlxG.sound.play(Paths.sound('cancelMenu'));
+            PlayState.deathCounter = 0;
+            PlayState.seenCutscene = false;
+            WeekData.loadTheFirstEnabledMod();
+            MusicBeatState.switchState(new FreeplayState());
+            FlxG.sound.playMusic(Paths.music('freakyMenu'));
+            PlayState.changedDifficulty = false;
+            PlayState.chartingMode = false;
+        }
+
+        super.update(elapsed);
     }
 }

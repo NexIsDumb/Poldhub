@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="pulsantone.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Non Premuto Invio0000" x="100" y="100" width="220" height="211"/>
+	<SubTexture name="Non Premuto Invio0001" x="100" y="100" width="220" height="211"/>
+	<SubTexture name="Non Premuto Invio0002" x="100" y="100" width="220" height="211"/>
+	<SubTexture name="Non Premuto Invio0003" x="420" y="100" width="220" height="211"/>
+	<SubTexture name="Non Premuto Invio0004" x="420" y="100" width="220" height="211"/>
+	<SubTexture name="Non Premuto Invio0005" x="420" y="100" width="220" height="211"/>
+	<SubTexture name="Non Premuto Invio0006" x="740" y="100" width="220" height="211"/>
+	<SubTexture name="Non Premuto Invio0007" x="740" y="100" width="220" height="211"/>
+	<SubTexture name="Non Premuto Invio0008" x="740" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0000" x="1060" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0001" x="1060" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0002" x="1380" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0003" x="1380" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0004" x="1380" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0005" x="1700" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0006" x="1700" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0007" x="1700" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0008" x="1700" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0009" x="1700" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0010" x="1700" y="100" width="220" height="211"/>
+	<SubTexture name="Premuto Invio0011" x="1700" y="100" width="220" height="211"/>
+</TextureAtlas>
