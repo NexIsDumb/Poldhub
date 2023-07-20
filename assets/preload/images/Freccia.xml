@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="Freccia.png">
+	<!-- Created with Adobe Animate version 21.0.6.41649 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="FrecciaClick0000" x="100" y="100" width="91" height="46" frameX="0" frameY="-71" frameWidth="91" frameHeight="189"/>
+	<SubTexture name="FrecciaClick0001" x="100" y="100" width="91" height="46" frameX="0" frameY="-71" frameWidth="91" frameHeight="189"/>
+	<SubTexture name="FrecciaClick0002" x="291" y="100" width="35" height="189" frameX="-56" frameY="0" frameWidth="91" frameHeight="189"/>
+	<SubTexture name="FrecciaClick0003" x="291" y="100" width="35" height="189" frameX="-56" frameY="0" frameWidth="91" frameHeight="189"/>
+	<SubTexture name="FrecciaClick0004" x="426" y="100" width="50" height="154" frameX="-41" frameY="-18" frameWidth="91" frameHeight="189"/>
+	<SubTexture name="FrecciaClick0005" x="426" y="100" width="50" height="154" frameX="-41" frameY="-18" frameWidth="91" frameHeight="189"/>
+	<SubTexture name="FrecciaClick0006" x="576" y="100" width="55" height="141" frameX="-36" frameY="-24" frameWidth="91" frameHeight="189"/>
+	<SubTexture name="FrecciaClick0007" x="576" y="100" width="55" height="141" frameX="-36" frameY="-24" frameWidth="91" frameHeight="189"/>
+	<SubTexture name="FrecciaFerma0000" x="731" y="100" width="55" height="141"/>
+</TextureAtlas>

@@ -107,6 +107,7 @@
 		350
 	],
 	"healthicon": "bf-pixel",
+	"death_character": "bf-pixel-dead",
 	"flip_x": true,
 	"healthbar_colors": [
 		123,

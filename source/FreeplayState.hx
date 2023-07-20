@@ -32,6 +32,7 @@ class FreeplayState extends MusicBeatState
 	private static var curSelected:Int = 0;
 	var curDifficulty:Int = -1;
 	private static var lastDifficultyName:String = '';
+	public static var skinSelected:Bool = false;
 
 	var scoreBG:FlxSprite;
 	var scoreText:FlxText;
@@ -196,6 +197,8 @@ class FreeplayState extends MusicBeatState
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
+
+		skinSelected = false;
 		super.create();
 	}
 
@@ -376,15 +379,21 @@ class FreeplayState extends MusicBeatState
 				colorTween.cancel();
 			}
 			
-			if (FlxG.keys.pressed.SHIFT){
+			if (FlxG.keys.pressed.SHIFT) {
 				LoadingState.loadAndSwitchState(new ChartingState());
-			}else{
-				LoadingState.loadAndSwitchState(new PlayState());
+				FlxG.sound.music.volume = 0;
+				destroyFreeplayVocals();
+			} else {  // Parte modificata interamente da Nex
+				if (PlayState.SONG.player1 == null) {
+					FlxTween.tween(FlxG.sound.music, {pitch: 0}, 0.6);
+					LoadingState.loadAndSwitchState(new CharSelectorState());
+					skinSelected = true;
+				} else {
+					LoadingState.loadAndSwitchState(new PlayState());
+					FlxG.sound.music.volume = 0;
+					destroyFreeplayVocals();
+				}
 			}
-
-			FlxG.sound.music.volume = 0;
-					
-			destroyFreeplayVocals();
 		}
 		else if(controls.RESET)
 		{

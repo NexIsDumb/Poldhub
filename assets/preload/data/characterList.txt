@@ -9,3 +9,5 @@ bf-pixel
 gf-pixel
 bf-pixel-opponent
 bf-holding-gf
+poldo-bf
+144

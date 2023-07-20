@@ -33,6 +33,8 @@ typedef CharacterFile = {
 	var flip_x:Bool;
 	var no_antialiasing:Bool;
 	var healthbar_colors:Array<Int>;
+
+	var death_character:Null<String>;
 }
 
 typedef AnimArray = {
@@ -77,9 +79,10 @@ class Character extends FlxSprite
 	public var noAntialiasing:Bool = false;
 	public var originalFlipX:Bool = false;
 	public var healthColorArray:Array<Int> = [255, 0, 0];
+	public var gameOverChar:String = '';
 
-	public static var DEFAULT_CHARACTER:String = 'bf'; //In case a character is missing, it will use BF on its place
-	public function new(x:Float, y:Float, ?character:String = 'bf', ?isPlayer:Bool = false)
+	public static var DEFAULT_CHARACTER:String = 'poldo-bf'; //In case a character is missing, it will use BF on its place
+	public function new(x:Float, y:Float, ?character:String = 'poldo-bf', ?isPlayer:Bool = false)
 	{
 		super(x, y);
 
@@ -186,6 +189,9 @@ class Character extends FlxSprite
 
 				if(json.healthbar_colors != null && json.healthbar_colors.length > 2)
 					healthColorArray = json.healthbar_colors;
+
+				if (json.death_character != null && json.death_character.length > 0)
+					gameOverChar = json.death_character;
 
 				if(ClientPrefs.globalAntialiasing) antialiasing = !noAntialiasing;
 
@@ -312,13 +318,14 @@ class Character extends FlxSprite
 	}
 
 	public var danced:Bool = false;
+	public var forceDance:Bool = false;
 
 	/**
 	 * FOR GF DANCING SHIT
 	 */
 	public function dance()
 	{
-		if (!debugMode && !skipDance && !specialAnim)
+		if (forceDance || (!debugMode && !skipDance && !specialAnim))
 		{
 			if(danceIdle)
 			{

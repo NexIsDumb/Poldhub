@@ -20,7 +20,7 @@ class PauseSubState extends MusicBeatSubstate
 	var grpMenuShit:FlxTypedGroup<Alphabet>;
 
 	var menuItems:Array<String> = [];
-	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Options', 'Exit to menu'];
+	var menuItemsOG:Array<String> = ['Resume', 'Restart Song', 'Change Difficulty', 'Cambia Skin', 'Options', 'Exit to menu'];
 	var difficultyChoices = [];
 	var curSelected:Int = 0;
 
@@ -37,6 +37,7 @@ class PauseSubState extends MusicBeatSubstate
 	{
 		super();
 		if(CoolUtil.difficulties.length < 2) menuItemsOG.remove('Change Difficulty'); //No need to change difficulty if there is only one!
+		if(PlayState.isStoryMode || !FreeplayState.skinSelected) menuItemsOG.remove('Cambia Skin');
 
 		if(PlayState.chartingMode)
 		{
@@ -269,6 +270,10 @@ class PauseSubState extends MusicBeatSubstate
 					pauseMusic.persist = true;
 					options.OptionsState.fromPause = true;
 					LoadingState.loadAndSwitchState(new options.OptionsState());
+				case "Cambia Skin":
+					pauseMusic.persist = true;
+					FlxTween.tween(pauseMusic, {pitch: 0}, 0.6, {onComplete: function(twn:FlxTween) pauseMusic.destroy()});
+					LoadingState.loadAndSwitchState(new CharSelectorState(), true);
 			}
 		}
 	}

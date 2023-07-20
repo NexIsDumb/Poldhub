@@ -118,6 +118,7 @@
 		350
 	],
 	"healthicon": "bf",
+	"death_character": "bf-dead",
 	"flip_x": true,
 	"healthbar_colors": [
 		49,
