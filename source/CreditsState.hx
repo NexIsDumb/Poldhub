@@ -81,13 +81,13 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
-			["Team della Demo di PoldHub"],	
+			["Team della Demo di PoldHub"],
 			['Prince', 				'prince', 			"Direttore della mod",														'https://instagram.com/prince_of_nothin?igshid=NGExMmI2YTkyZg==', 	'6FB6FF'],
 			['Magmah', 				'magma',			"Codirettore e compositore",										'https://www.youtube.com/@MagmaBlood',	'FF69EF'],
 			['RicRanX',				'ricranx',			"Scrittore dei dialoghi", 											'https://youtube.com/@ricran06', 		'F9C971'],
-			['Nex_isDumb',			'nex',				"Programmatore, artista\ne mappatore delle canzoni",				'https://linktr.ee/just_nex',			'999999'],
-			['Nile8182',			'nile',				"Programmatore, artista (sfondi jenshin e ciccio),\nanimatore (cicciogamer89) e mappatore delle canzoni",		'https://linktr.ee/8182nile',			'FFFFFF'],
-			['Firenova',			'firenova',			"Programmatore e artista",											'https://www.youtube.com/channel/UCnj3Ht5DWXwa92tl_Q3TQvQ',	'C72424'],
+			['Nex_isDumb',			'nex',				"Programmatore Principale, artista\ne mappatore delle canzoni",				'https://linktr.ee/just_nex',			'999999'],
+			['Nile8182',			'nile',				"Programmatore Supporto, artista (sfondi jenshin e ciccio),\nanimatore (cicciogamer89) e mappatore delle canzoni",		'https://linktr.ee/8182nile',			'FFFFFF'],
+			['Firenova',			'firenova',			"Artista",											                'https://www.youtube.com/channel/UCnj3Ht5DWXwa92tl_Q3TQvQ',	'C72424'],
 			['Gianpaolo Catondo',	'gianpaolo-catondo',	"Artista e animatore\n(elementi della ui)",						'https://www.youtube.com/watch?v=T1h1e1XOwys&ab_channel=SnoozerIIVMMXIV',	'E5E1FF'],
 			['MattNotHere',			'mhanzarella',		"Artista e animatore (xiuder, jenshin),\n icone dei crediti e dei personaggi",		'', 	'6E4C44'],
 			['Ava',					'ava',				"Artista e animatrice\n(charlotte)",								'https://twitter.com/AvofuNG',	'282866'],
