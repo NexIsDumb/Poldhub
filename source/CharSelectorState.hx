@@ -20,6 +20,7 @@ class CharSelectorState extends MusicBeatState
     private var chars:FlxTypedGroup<Character>;
     private var skins:Array<Array<String>> = [  // Metti i nomi ed artisti delle skin giocabili qua  - Nex
         ['poldo-bf', 'Astro Galaxy'],
+        ['poldo-bf-chitarra', 'JackLePatate'],
         ['144', 'Astro Galaxy - Gabrifulup13'],
         ['bf', 'Phantom Arcade'],
         ['bf-christmas', 'Phantom Arcade']

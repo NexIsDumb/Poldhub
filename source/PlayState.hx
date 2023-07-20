@@ -266,6 +266,13 @@ class PlayState extends MusicBeatState
 	var tankmanRun:FlxTypedGroup<TankmenBG>;
 	var foregroundSprites:FlxTypedGroup<BGSprite>;
 
+	// Robe per la Poldhub  - Nex
+	var fortnut1:BGSprite;
+	var fortnut2:BGSprite;
+	var benebene:BGSprite;
+	var blackout = new FlxSprite ();
+	var sediona2:BGSprite;
+
 	public var songScore:Int = 0;
 	public var songHits:Int = 0;
 	public var songMisses:Int = 0;
@@ -823,6 +830,60 @@ class PlayState extends MusicBeatState
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank4', 1300, 900, 1.5, 1.5, ['fg']));
 				foregroundSprites.add(new BGSprite('tank5', 1620, 700, 1.5, 1.5, ['fg']));
 				if(!ClientPrefs.lowQuality) foregroundSprites.add(new BGSprite('tank3', 1300, 1200, 3.5, 2.5, ['fg']));
+		
+			//Stage della pornhub - Nile
+
+			case 'cucinaciccio': //CiccioGamer89 Song
+				foregroundSprites = new FlxTypedGroup<BGSprite>();
+
+				var sfondo:BGSprite = new BGSprite('poldhubStages/cucinaciccio/sfondo', -1000, -385, 0.9, 0.9);
+				var tavolo:BGSprite = new BGSprite('poldhubStages/cucinaciccio/tavolo', -1070, -415, 1, 1);
+
+				sfondo.scale.set(0.6, 0.6);
+				tavolo.scale.set(0.7, 0.8);
+
+				add(sfondo);
+				foregroundSprites.add(tavolo);
+
+			case 'xiuderone': //Xiuder Song 
+				fortnut1 = new BGSprite('poldhubStages/xiuderone/fortnut', -1280, -1350, 1, 1);
+				fortnut2 = new BGSprite('poldhubStages/xiuderone/bg', -1280, -1350, 1, 1);
+				benebene = new BGSprite('poldhubStages/xiuderone/benebene', -1280, -1350, 1, 1);
+				var sediona1 = new BGSprite('poldhubStages/xiuderone/sediona', -1380, -1350, 1, 1);
+				sediona2 = new BGSprite('poldhubStages/xiuderone/sediona2', -1380, -1350, 1, 1);
+				blackout.makeGraphic(2560, 2700, FlxColor.BLACK);
+				blackout.x = -1380;
+				blackout.y = -1350;
+				blackout.alpha = 0;
+
+				fortnut1.scale.set(0.75, 0.75);
+				fortnut2.scale.set(0.75, 0.75);
+				benebene.scale.set(0.75, 0.75);
+				sediona1.scale.set(0.75, 0.75);
+				sediona2.scale.set(0.75, 0.75);
+				benebene.alpha = 0;
+
+				add(benebene);
+				add(fortnut2);
+				add(fortnut1);
+				add(sediona1);
+
+			case 'jenshin': //Charlotte M (Jenshin Impact) Song
+				var BG2:BGSprite = new BGSprite('poldhubStages/jenshin/BG2', -950, -400, 0.75, 0.75);
+				var BG1:BGSprite = new BGSprite('poldhubStages/jenshin/BG1', -1000, -400, 0.9, 0.9);
+				var ground:BGSprite = new BGSprite('poldhubStages/jenshin/Ground', -1100, -400, 1, 1);
+
+				BG2.scale.set(0.9, 0.9);
+				BG1.scale.set(0.9, 0.9);
+				ground.scale.set(0.9, 0.9);
+
+				add(BG2);
+				add(BG1);
+				add(ground);
+				if(!ClientPrefs.lowQuality) {
+					foregroundSprites = new FlxTypedGroup<BGSprite>();
+					foregroundSprites.add(new BGSprite('poldhubStages/jenshin/FG1', -1100, -400, 1.1, 1.1));
+				}
 		}
 
 		if(isPixelStage) {
@@ -844,6 +905,13 @@ class PlayState extends MusicBeatState
 				add(halloweenWhite);
 			case 'tank':
 				add(foregroundSprites);
+				
+			case 'xiuderone':
+				add(sediona2);
+				add(blackout);
+
+			default:  // Parte modificata da Nex
+				if (foregroundSprites != null) add(foregroundSprites);
 		}
 
 		#if LUA_ALLOWED
@@ -2929,6 +2997,37 @@ class PlayState extends MusicBeatState
 						bottomBoppers.dance(true);
 						heyTimer = 0;
 					}
+				}
+
+			//stage pornhub - Nile
+			case 'xiuderone':
+				if(SONG.song == 'xiudered') {
+					switch(curBeat) {
+						case 12 | 80:
+							FlxTween.tween(fortnut1, {alpha: 0}, 0.1, {ease: FlxEase.quadIn});
+						case 48 | 112:
+							FlxTween.tween(fortnut1, {alpha: 1}, 0.1, {ease: FlxEase.quadIn});
+						case 148:
+							fortnut1.kill();
+							fortnut2.kill();
+							benebene.alpha = 1;
+
+						case 142 | 316:
+							FlxTween.tween(blackout, {alpha: 1}, 0.8, {ease: FlxEase.quadIn});
+							FlxTween.tween(camHUD, {alpha: 0}, 0.5, {ease: FlxEase.quadIn});
+
+						case 156:
+							blackout.alpha = 0;
+							camHUD.alpha = 1;
+
+							if(ClientPrefs.timeBarType == 'Nome canzone')
+							{ 
+								timeTxt.y = 14;
+								timeTxt.size = 36;
+								timeTxt.text = "Xiuder-EDD";
+							}
+					}
+					//la roba dei sottotitoli deve poi diventare un evento, quindi niente curstep - Nile
 				}
 		}
 
@@ -5017,6 +5116,13 @@ class PlayState extends MusicBeatState
 				{
 					trainCooldown = FlxG.random.int(-4, 0);
 					trainStart();
+				}
+
+			//stage porhub - nile
+			case 'xiuderone':
+				switch (curBeat) {
+					case 156:
+						FlxG.camera.fade(FlxColor.WHITE, 1, true, true);
 				}
 		}
 
