@@ -188,10 +188,10 @@ class FreeplayState extends MusicBeatState
 
 		#if PRELOAD_ALL
 		var leText:String = "Premi SPACE per ascoltare la Canzone / Premi CTRL per aprire il menu di Modifiche Gameplay / Premi RESET per Resettare il Punteggio e l'Accuratezza.";
-		var size:Int = 16;
+		var size:Int = 14;
 		#else
 		var leText:String = "Premi CTRL per aprire il menu di Modifiche Gameplay / Premi RESET per Resettare il Punteggio e l'Accuratezza.";
-		var size:Int = 18;
+		var size:Int = 16;
 		#end
 		var text:FlxText = new FlxText(textBG.x, textBG.y + 4, FlxG.width, leText, size);
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
