@@ -4,7 +4,7 @@
 Mod di Poldo sviluppata su Psych Engine 0.6.3
 
 ## Installazione:
-La stessa di [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine) 0.6.3 / 0.7 (Usa però [Haxe 2.4.5](https://haxe.org/download/version/4.2.5/) e le versioni delle librerie in `hmm.json`)
+La stessa di [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine) 0.6.3 / 0.7 (Usa però [Haxe 4.2.5](https://haxe.org/download/version/4.2.5/) e le versioni delle librerie in `hmm.json`)
 
 Se vuoi, puoi anche usare anche il metodo più sicuro:
 

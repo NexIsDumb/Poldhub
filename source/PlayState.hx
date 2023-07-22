@@ -271,9 +271,7 @@ class PlayState extends MusicBeatState
 	var fortnut1:BGSprite;
 	var fortnut2:BGSprite;
 	var benebene:BGSprite;
-	var blackout = new FlxSprite ();
 	var sediona2:BGSprite;
-	var tuamadre = new FlxText();
 
 	public var songScore:Int = 0;
 	public var songHits:Int = 0;
@@ -383,11 +381,6 @@ class PlayState extends MusicBeatState
 		rating.score = 50;
 		rating.noteSplash = false;
 		ratingsData.push(rating);
-
-		tuamadre = new FlxText(0, 290, FlxG.width, "AH", 20);
-		tuamadre.setFormat(Paths.font("magmasangue.otf"), 108, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		tuamadre.visible = false;
-		tuamadre.scrollFactor.set();
 
 		// For the "Just the Two of Us" achievement
 		for (i in 0...keysArray.length)
@@ -852,23 +845,18 @@ class PlayState extends MusicBeatState
 				add(sfondo);
 				foregroundSprites.add(tavolo);
 
-			case 'xiuderone': //Xiuder Song 
+			case 'xiuderone': //Xiuder Song
 				fortnut1 = new BGSprite('poldhubStages/xiuderone/fortnut', -1280, -1350, 1, 1);
 				fortnut2 = new BGSprite('poldhubStages/xiuderone/bg', -1280, -1350, 1, 1);
 				benebene = new BGSprite('poldhubStages/xiuderone/benebene', -1280, -1350, 1, 1);
 				var sediona1 = new BGSprite('poldhubStages/xiuderone/sediona', -1380, -1350, 1, 1);
 				sediona2 = new BGSprite('poldhubStages/xiuderone/sediona2', -1380, -1350, 1, 1);
-				blackout.makeGraphic(2560, 2700, FlxColor.BLACK);
-				blackout.x = -1380;
-				blackout.y = -1350;
-				blackout.alpha = 0;
 
 				fortnut1.scale.set(0.75, 0.75);
 				fortnut2.scale.set(0.75, 0.75);
 				benebene.scale.set(0.75, 0.75);
 				sediona1.scale.set(0.75, 0.75);
 				sediona2.scale.set(0.75, 0.75);
-				benebene.alpha = 0;
 
 				add(benebene);
 				add(fortnut2);
@@ -925,8 +913,6 @@ class PlayState extends MusicBeatState
 				
 			case 'xiuderone':
 				add(sediona2);
-				add(blackout);
-				add(tuamadre);
 
 			default:  // Parte modificata da Nex
 				if (foregroundSprites != null) add(foregroundSprites);
@@ -3040,70 +3026,6 @@ class PlayState extends MusicBeatState
 						heyTimer = 0;
 					}
 				}
-
-			//stage pornhub - Nile
-			case 'xiuderone':
-				if(SONG.song == 'xiudered') {
-					switch(curBeat) {
-						case 12 | 80:
-							FlxTween.tween(fortnut1, {alpha: 0}, 0.1, {ease: FlxEase.quadIn});
-						case 48 | 112:
-							FlxTween.tween(fortnut1, {alpha: 1}, 0.1, {ease: FlxEase.quadIn});
-						case 148:
-							fortnut1.kill();
-							fortnut2.kill();
-							benebene.alpha = 1;
-
-						case 142 | 316:
-							FlxTween.tween(blackout, {alpha: 1}, 0.8, {ease: FlxEase.quadIn});
-							FlxTween.tween(camHUD, {alpha: 0}, 0.5, {ease: FlxEase.quadIn});
-
-						case 156:
-							blackout.alpha = 0;
-							camHUD.alpha = 1;
-							tuamadre.visible = false;
-
-							if(ClientPrefs.timeBarType == 'Nome canzone')
-							{
-								timeTxt.y = 14;
-								timeTxt.size = 36;
-								timeTxt.text = "Xiuder-EDD";
-							}
-					}
-
-					//Lo faccio usando i curStep perché non abbiamo tempo - Nile	
-
-					switch(curStep) {  
-						case 589:
-							tuamadre.visible = true;
-							tuamadre.text = "AH";
-						case 592:
-							tuamadre.text = "AH AH";
-						case 595:
-							tuamadre.text = "AH AH AH";
-						case 598:
-							tuamadre.text = "AH AH AH AH";
-						case 600:
-							tuamadre.text = "AH AH AH AH AH";
-						case 606:
-							tuamadre.text = "MANU!";
-						case 613:
-							tuamadre.text = "TUA";
-						case 615:
-							tuamadre.text = "TUA MADRE!";
-						case 1280:
-							tuamadre.visible = true;
-							tuamadre.text = "NON";
-						case 1283:
-							tuamadre.text = "NON SI";
-						case 1285:
-							tuamadre.text = "NON SI SA";
-						case 1287:
-							tuamadre.text = "NON SI SA COME";
-						case 1289:
-							tuamadre.text = "NON SI SA COME MAI";
-					}
-				}
 		}
 
 		if(!inCutscene) {
@@ -5191,13 +5113,6 @@ class PlayState extends MusicBeatState
 				{
 					trainCooldown = FlxG.random.int(-4, 0);
 					trainStart();
-				}
-
-			//stage porhub - nile
-			case 'xiuderone':
-				switch (curBeat) {
-					case 156:
-						if(ClientPrefs.flashing) FlxG.camera.fade(FlxColor.WHITE, 1, true, true);
 				}
 		}
 
