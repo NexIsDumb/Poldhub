@@ -21,6 +21,7 @@ class JenpactCutScene extends MusicBeatState
 		comic.updateHitbox();
 		var finalScale = (shut ? Math.max : Math.min)(comic.scale.x, comic.scale.y);
 		comic.scale.set(finalScale, finalScale);
+        comic.screenCenter();
         add(comic);
 
         camFollow = new FlxObject(0, 0, 2, 2);
@@ -38,7 +39,7 @@ class JenpactCutScene extends MusicBeatState
         CustomFadeTransition.nextCamera = camOther;
 
         var tipTextArray:Array<String> =
-        "Comandi Movim (Opz) - Muovi Cam
+        "Comandi Movimento - Muoviti
         \nShift - Movimento piu' veloce
         \nE/Q - Camera Zoom Avanti/Indietro
 		\nR - Reset Camera Zoom
@@ -88,14 +89,14 @@ class JenpactCutScene extends MusicBeatState
             if (FlxG.keys.pressed.SHIFT)
                 addToCam *= 4;
 
-            if (controls.UI_UP && camFollow.y > -1000)
+            if (controls.UI_UP && camFollow.y > -360)
                 camFollow.y -= addToCam;
-            else if (controls.UI_DOWN && camFollow.y < 500)
+            else if (controls.UI_DOWN && camFollow.y < 720)
                 camFollow.y += addToCam;
 
-            if (controls.UI_LEFT && camFollow.x > -500)
+            if (controls.UI_LEFT && camFollow.x > -640)
                 camFollow.x -= addToCam;
-            else if (controls.UI_RIGHT && camFollow.x < 1000)
+            else if (controls.UI_RIGHT && camFollow.x < 1280)
                 camFollow.x += addToCam;
         }
 

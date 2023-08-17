@@ -26,7 +26,7 @@
 			"loop": false,
 			"offsets": [
 				0,
-				63
+				70
 			],
 			"anim": "deathConfirm",
 			"fps": 24,
@@ -37,8 +37,8 @@
 	"no_antialiasing": false,
 	"image": "characters/ChitarraroIsMORTO",
 	"position": [
-		0,
-		350
+		-20,
+		340
 	],
 	"healthicon": "poldobf-chitarra",
 	"death_character": "",
