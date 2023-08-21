@@ -105,9 +105,9 @@ class MainMenuState extends MusicBeatState
 		for (i in 0...optionShit.length)
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 160)  + offset);
-			menuItem.scale.x = optionShit[i] == 'shop_locked' ? 0.85 : 1;
-			menuItem.scale.y = optionShit[i] == 'shop_locked' ? 0.85 : 1;
+			var menuItem:FlxSprite = new FlxSprite(0, (i * (optionShit[i] == 'donate' ? 155 : 160)) + offset);
+			menuItem.scale.x = optionShit[i] == 'shop_locked' ? 0.85 : optionShit[i] == 'donate' ? 0.65 : 1;
+			menuItem.scale.y = optionShit[i] == 'shop_locked' ? 0.85 : optionShit[i] == 'donate' ? 0.65 : 1;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
