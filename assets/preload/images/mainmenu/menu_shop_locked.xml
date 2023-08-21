@@ -1,6 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="menu_shop_locked.png">
-	<!-- Created with Adobe Animate version 21.0.6.41649 -->
-	<!-- http://www.adobe.com/products/animate.html -->
-	<SubTexture name="shop_locked basic0000" x="100" y="100" width="362" height="185" frameX="-5" frameY="19" frameWidth="369" frameHeight="185"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.0.4 https://neeeoo.github.io/funkin-packer/ and edited by Nex_isDumb
+-->
+<TextureAtlas imagePath="menu_shop_locked.png" width="393" height="242">
+	<SubTexture name="shop_locked basic0000" x="42.5" y="42.5" width="307.7" height="157.25" frameX="-25" frameY="19" frameWidth="369" frameHeight="185"/>
 </TextureAtlas>
