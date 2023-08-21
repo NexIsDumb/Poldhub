@@ -2,28 +2,7 @@
 	"song": {
 		"player1": null,
 		"player2": "cicciogamer89",
-		"events": [
-			[
-				25263.1578947368,
-				[
-					[
-						"Change Scroll Speed",
-						"1.07",
-						"0.3"
-					]
-				]
-			],
-			[
-				35368.4210526316,
-				[
-					[
-						"Change Scroll Speed",
-						"1.0",
-						"0.3"
-					]
-				]
-			]
-		],
+		"events": [],
 		"notes": [
 			{
 				"typeOfSection": 0,
